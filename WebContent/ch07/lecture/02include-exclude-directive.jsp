@@ -3,9 +3,15 @@
 <!DOCTYPE html>
 <html>
 <head>
+<%
+String str = "java";
+%>
+<%@ include file="/WEB-INF/subModules/bootstrapHeader.jsp" %>
 <title>Insert title here</title>
 </head>
 <body>
-	<h1> 첫번째 jsp </h1>
+
+<%= str %>
+
 </body>
 </html>

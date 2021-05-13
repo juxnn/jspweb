@@ -3,9 +3,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Insert title here</title>
+<meta charset="UTF-8">
+<title>JSP 주석</title>
 </head>
 <body>
-	<h1> 첫번째 jsp </h1>
+<%-- JSP 주석입니다. --%>
+주석은 출력 결과에 포함되지 않습니다.
 </body>
 </html>
