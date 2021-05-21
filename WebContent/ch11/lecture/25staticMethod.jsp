@@ -2,6 +2,9 @@
 <%@ page import="java.util.*" %>
 
 <% request.setCharacterEncoding("utf-8"); %>
+<%
+	pageContext.setAttribute("myAttr", 2.14);
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,11 +16,9 @@
 </head>
 <body>
 <div class="container">
-	<h1>03 include</h1>
-
-	<jsp:include page="04include-action-tag.jsp"></jsp:include>
-	
-	<h1>03 include</h1>
+	\${Math.round(3.14) } : ${Math.round(3.14) } <br>
+	\${Math.round(myAttr)} : ${Math.round(myAttr) }
+	<!-- java.lang.Math 라서, 따로 import 해주지 않아도 되지만 잘 확인해서 쓰자. -->
 </div>
 </body>
 </html>

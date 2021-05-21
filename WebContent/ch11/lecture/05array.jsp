@@ -8,16 +8,23 @@
 
 <%@ include file="/WEB-INF/subModules/bootstrapHeader.jsp"%>
 
+<%
+String[] arr1 = {"html", "css", "js", "jquery", "bootstrap"};
+pageContext.setAttribute("list", arr1);
+pageContext.setAttribute("i", 3);
+%>
+
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
 <div class="container">
-	<h1>03 include</h1>
-
-	<jsp:include page="04include-action-tag.jsp"></jsp:include>
+	0: ${list[0] } <br>
+	1: ${list[1] } <br>
+	2: ${list["2"] } <br>
+	3: ${list[i] } <br>
+	5: ${list[5] } <br>
 	
-	<h1>03 include</h1>
 </div>
 </body>
 </html>

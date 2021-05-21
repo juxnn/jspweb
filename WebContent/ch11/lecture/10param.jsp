@@ -13,11 +13,24 @@
 </head>
 <body>
 <div class="container">
-	<h1>03 include</h1>
-
-	<jsp:include page="04include-action-tag.jsp"></jsp:include>
+	<h1>param</h1>
+	${param }
+	<br>
+	${param.name }<br>
+	${param.age }<br>
 	
-	<h1>03 include</h1>
+	<hr>
+	
+	<%
+	String[] names = request.getParameterValues("name");
+	%>
+	<%= names[0] %>
+	<%= names[1] %>
+	
+	<hr>
+	${paramValues.name[0] }<br>
+	${paramValues.name[1] }
+	
 </div>
 </body>
 </html>

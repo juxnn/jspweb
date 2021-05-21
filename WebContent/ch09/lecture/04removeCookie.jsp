@@ -7,17 +7,18 @@
 <head>
 
 <%@ include file="/WEB-INF/subModules/bootstrapHeader.jsp"%>
+<%
+Cookie cookie = new Cookie("my-cookie", "my-value");
+cookie.setMaxAge(0);
+response.addCookie(cookie);
 
+%>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
 <div class="container">
-	<h1>03 include</h1>
-
-	<jsp:include page="04include-action-tag.jsp"></jsp:include>
-	
-	<h1>03 include</h1>
+	<h1>쿠키 삭제</h1>
 </div>
 </body>
 </html>

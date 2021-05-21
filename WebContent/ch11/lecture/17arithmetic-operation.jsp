@@ -13,11 +13,18 @@
 </head>
 <body>
 <div class="container">
-	<h1>03 include</h1>
 
-	<jsp:include page="04include-action-tag.jsp"></jsp:include>
+	<h1>산술 연산</h1>
 	
-	<h1>03 include</h1>
+	\${3 + 5 } = ${3 + 5 }<br>
+	\${3 - 5 } = ${3 - 5 }<br>
+	\${3 * 5 } = ${3 * 5 }<br>
+	\${3 / 5 } = ${3 / 5 }<br>
+	\${3 % 5 } = ${3 % 5 }<br>
+	\${3 mod 5 } = ${3 mod 5 }<br>
+	
+	
+	
 </div>
 </body>
 </html>

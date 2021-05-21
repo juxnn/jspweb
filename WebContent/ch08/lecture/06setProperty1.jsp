@@ -13,11 +13,12 @@
 </head>
 <body>
 <div class="container">
-	<h1>03 include</h1>
-
-	<jsp:include page="04include-action-tag.jsp"></jsp:include>
-	
-	<h1>03 include</h1>
+	<form action="06setProperty2.jsp" method="post">
+		제목: <input type="text" name="title" /> <br>
+		저자: <input type="text" name="writer" /> <br>
+		가격: <input type="text" name="price" /> <br>
+		<input type="submit" value="등록" />
+	</form>
 </div>
 </body>
 </html>

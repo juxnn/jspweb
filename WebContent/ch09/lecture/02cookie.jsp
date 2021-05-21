@@ -2,6 +2,10 @@
 <%@ page import="java.util.*" %>
 
 <% request.setCharacterEncoding("utf-8"); %>
+
+<%
+Cookie[] cookies = request.getCookies();
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,11 +17,18 @@
 </head>
 <body>
 <div class="container">
-	<h1>03 include</h1>
-
-	<jsp:include page="04include-action-tag.jsp"></jsp:include>
+	<h1>cookie 2</h1>
+	<h3>cookies size: <%=cookies.length %></h3>
+	<%
+	for(Cookie cookie: cookies){
+		out.print("<p>");
+		out.print(cookie.getName());
+		out.print(":");
+		out.print(cookie.getValue());
+		out.print("</p>");
+	}
 	
-	<h1>03 include</h1>
+	%>
 </div>
 </body>
 </html>

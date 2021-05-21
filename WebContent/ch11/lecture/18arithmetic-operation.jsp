@@ -2,6 +2,10 @@
 <%@ page import="java.util.*" %>
 
 <% request.setCharacterEncoding("utf-8"); %>
+<%
+pageContext.setAttribute("a", 50);
+pageContext.setAttribute("b", 30);
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,11 +17,12 @@
 </head>
 <body>
 <div class="container">
-	<h1>03 include</h1>
-
-	<jsp:include page="04include-action-tag.jsp"></jsp:include>
-	
-	<h1>03 include</h1>
+	\${a + b } = ${a + b }<br>
+	\${a - b } = ${a - b }<br>
+	\${a * b } = ${a * b }<br>
+	\${a / b } = ${a / b }<br>
+	\${a % b } = ${a % b }<br>
+	\${a mod b } = ${a mod b }<br>
 </div>
 </body>
 </html>

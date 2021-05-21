@@ -8,16 +8,15 @@
 
 <%@ include file="/WEB-INF/subModules/bootstrapHeader.jsp"%>
 
+
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
 <div class="container">
-	<h1>03 include</h1>
+	<% session.invalidate(); %>	
+	<h1>세션 삭제됨</h1>
 
-	<jsp:include page="04include-action-tag.jsp"></jsp:include>
-	
-	<h1>03 include</h1>
 </div>
 </body>
 </html>

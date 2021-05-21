@@ -13,11 +13,13 @@
 </head>
 <body>
 <div class="container">
-	<h1>03 include</h1>
-
-	<jsp:include page="04include-action-tag.jsp"></jsp:include>
-	
-	<h1>03 include</h1>
+	<h1>Expression</h1>
+	<h3>문법</h3>
+	<p>${var }</p>
+	<p>var: 4개 영역 (page, request, session, application)의 attribute(속성)</p>
+	<p>page 영역 부터 request, session application 영역 순으로 찾는다. </p>
+	<p>없으면 출력하지 않음</p>
+		
 </div>
 </body>
 </html>

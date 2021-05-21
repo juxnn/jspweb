@@ -1,5 +1,11 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ page import="java.util.*" %>
+<%@ page import= "util.Cookies" %>
+<%
+	response.addCookie(Cookies.createCookie("name", "최범균"));
+	response.addCookie(Cookies.createCookie("id", "madvirus", request.getContextPath(), -1));
+
+%>
 
 <% request.setCharacterEncoding("utf-8"); %>
 <!DOCTYPE html>
@@ -9,15 +15,12 @@
 <%@ include file="/WEB-INF/subModules/bootstrapHeader.jsp"%>
 
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>사용 예</title>
 </head>
 <body>
 <div class="container">
-	<h1>03 include</h1>
-
-	<jsp:include page="04include-action-tag.jsp"></jsp:include>
+	Cookies를 사용해서 쿠키 생성
 	
-	<h1>03 include</h1>
 </div>
 </body>
 </html>

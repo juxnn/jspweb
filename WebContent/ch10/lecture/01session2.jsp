@@ -8,16 +8,24 @@
 
 <%@ include file="/WEB-INF/subModules/bootstrapHeader.jsp"%>
 
+
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
 <div class="container">
-	<h1>03 include</h1>
-
-	<jsp:include page="04include-action-tag.jsp"></jsp:include>
+	<h1>session 2</h1>
 	
-	<h1>03 include</h1>
+	<%
+	Object o = session.getAttribute("myattr1");
+	String s = (String) o;
+	
+	Object a = request.getAttribute("reqattr1");
+	String b = (String) a;
+	%>
+	
+	myattr1 : <%=s%><br>
+	reqattr1 : <%=b%>
 </div>
 </body>
 </html>

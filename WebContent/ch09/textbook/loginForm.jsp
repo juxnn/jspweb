@@ -9,15 +9,16 @@
 <%@ include file="/WEB-INF/subModules/bootstrapHeader.jsp"%>
 
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>로그인 폼</title>
 </head>
 <body>
 <div class="container">
-	<h1>03 include</h1>
+	<form action="<%=request.getContextPath()%>/ch09/textbook/login.jsp" method="post">
+	아이디 <input type="text" name="id" size="10">
+	암호 <input type="password" name="password" size="10">
+	<input type="submit" value="로그인">	
+	</form>
 
-	<jsp:include page="04include-action-tag.jsp"></jsp:include>
-	
-	<h1>03 include</h1>
 </div>
 </body>
 </html>

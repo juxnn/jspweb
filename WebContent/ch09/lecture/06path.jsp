@@ -2,6 +2,12 @@
 <%@ page import="java.util.*" %>
 
 <% request.setCharacterEncoding("utf-8"); %>
+
+<%
+Cookie cookie = new Cookie ("my-cookie9", "my-value9");
+cookie.setPath(request.getContextPath());
+response.addCookie(cookie);
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,11 +19,8 @@
 </head>
 <body>
 <div class="container">
-	<h1>03 include</h1>
-
-	<jsp:include page="04include-action-tag.jsp"></jsp:include>
-	
-	<h1>03 include</h1>
+	<h1>cookie path</h1>
+	<%=request.getContextPath() %>
 </div>
 </body>
 </html>

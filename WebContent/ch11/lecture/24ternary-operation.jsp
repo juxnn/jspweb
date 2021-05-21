@@ -13,11 +13,9 @@
 </head>
 <body>
 <div class="container">
-	<h1>03 include</h1>
-
-	<jsp:include page="04include-action-tag.jsp"></jsp:include>
-	
-	<h1>03 include</h1>
+	<h1>삼항 연산</h1>
+	\${true ? 'a' : 'b'} : ${true ? 'a' : 'b'} <br>
+	\${false ? 'a' : 'b'} : ${false ? 'a' : 'b'} <br>
 </div>
 </body>
 </html>

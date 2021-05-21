@@ -13,11 +13,18 @@
 </head>
 <body>
 <div class="container">
-	<h1>03 include</h1>
+<%	
+	String[] fruits = request.getParameterValues("fruit");
 
-	<jsp:include page="04include-action-tag.jsp"></jsp:include>
+	for(int i=0; i<fruits.length; i++){
+		pageContext.setAttribute("i", i);
+%>		
+		${paramValues.fruit[i] }<br>
+		<!-- ie에서 i가 들어가는 공간은 attribute 로만 찾기 때문에 위에 같은 설정이 필요하다. -->
+<%
+	}
+%>
 	
-	<h1>03 include</h1>
 </div>
 </body>
 </html>

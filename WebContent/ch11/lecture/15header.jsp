@@ -2,6 +2,9 @@
 <%@ page import="java.util.*" %>
 
 <% request.setCharacterEncoding("utf-8"); %>
+<%
+response.addCookie(new Cookie("my-cookie", "my-value"));
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,11 +16,9 @@
 </head>
 <body>
 <div class="container">
-	<h1>03 include</h1>
-
-	<jsp:include page="04include-action-tag.jsp"></jsp:include>
-	
-	<h1>03 include</h1>
+	connection: ${header.connection }<br>
+	cache-control: ${header["cache-control"] }<br>
+	cookie: ${header.cookie }<br>
 </div>
 </body>
 </html>

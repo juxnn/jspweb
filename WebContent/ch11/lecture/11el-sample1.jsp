@@ -13,11 +13,13 @@
 </head>
 <body>
 <div class="container">
-	<h1>03 include</h1>
-
-	<jsp:include page="04include-action-tag.jsp"></jsp:include>
+	<form action="11el-sample2.jsp" method="post">
+		이름: <input type="text" name="myname" /> <br>
+		나이: <input type="number" name="myage" /> <br>
+		이메일: <input type="email" name="myemail" /> <br>
+		<input type="submit" value="전송" /> <br>
+	</form>
 	
-	<h1>03 include</h1>
 </div>
 </body>
 </html>

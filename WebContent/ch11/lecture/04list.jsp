@@ -7,17 +7,27 @@
 <head>
 
 <%@ include file="/WEB-INF/subModules/bootstrapHeader.jsp"%>
+<%
+List<String> list = new ArrayList<>();
+list.add("java");
+list.add("html");
+list.add("mariadb");
+list.add("css");
 
+pageContext.setAttribute("list1", list);
+pageContext.setAttribute("i", "3");
+
+%>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
 <div class="container">
-	<h1>03 include</h1>
-
-	<jsp:include page="04include-action-tag.jsp"></jsp:include>
+	0: ${list1[0] }<br>
+	1: ${list1[1] }<br>
+	2: ${list1["2"] }<br>
+	3: ${list1[i] }<br>
 	
-	<h1>03 include</h1>
 </div>
 </body>
 </html>

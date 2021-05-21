@@ -8,16 +8,24 @@
 
 <%@ include file="/WEB-INF/subModules/bootstrapHeader.jsp"%>
 
+
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
 <div class="container">
-	<h1>03 include</h1>
-
-	<jsp:include page="04include-action-tag.jsp"></jsp:include>
+	<h1>session2</h1>
 	
-	<h1>03 include</h1>
+	<%
+	Object a = session.getAttribute("MEMBERID");
+	String x = (String) a;
+	Object b = session.getAttribute("NAME");
+	String y = (String) b;
+	%>
+	
+	MEMBERID : <%=x%><br>
+	NAME : <%=y%>
+	
 </div>
 </body>
 </html>

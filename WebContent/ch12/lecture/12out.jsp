@@ -1,7 +1,12 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ page import="java.util.*" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 <% request.setCharacterEncoding("utf-8"); %>
+<%
+request.setAttribute("desc","<b>는 굵은 글씨로 표시됨");
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,11 +18,13 @@
 </head>
 <body>
 <div class="container">
-	<h1>03 include</h1>
-
-	<jsp:include page="04include-action-tag.jsp"></jsp:include>
+	b 태그 설명: ${desc }
+	<br>
+	&lt;&gt;
 	
-	<h1>03 include</h1>
+	<br>
+	b 태그 설명: <c:out value="${desc }" />
+	
 </div>
 </body>
 </html>

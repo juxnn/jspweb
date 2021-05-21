@@ -13,11 +13,16 @@
 </head>
 <body>
 <div class="container">
-	<h1>03 include</h1>
-
-	<jsp:include page="04include-action-tag.jsp"></jsp:include>
+	cookie는 Map 이다.<br>
+	<hr>
+	cookie1: ${cookie["my-cookie"] }<br>
+	cookie2: ${cookie.JSESSIONID }<br>
+	cookie value 1: ${cookie["my-cookie"].value }<br>
+	cookie value 2: ${cookie.JSESSIONID.value }<br>
 	
-	<h1>03 include</h1>
+	<hr>
+	cookie httpOnly 1: ${cookie["my-cookie"].httpOnly }<br>
+	cookie httpOnly 2: ${cookie.JSESSIONID.httpOnly }<br>
 </div>
 </body>
 </html>

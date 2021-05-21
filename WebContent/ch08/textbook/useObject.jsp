@@ -2,6 +2,7 @@
 <%@ page import="java.util.*" %>
 
 <% request.setCharacterEncoding("utf-8"); %>
+<jsp:useBean id="member" scope="request" class="ch08.MemberInfo"/>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,11 +14,13 @@
 </head>
 <body>
 <div class="container">
-	<h1>03 include</h1>
-
-	<jsp:include page="04include-action-tag.jsp"></jsp:include>
+	<%=member.getName() %>(<%=member.getId()%>) 회원님
+	안녕하세요.
 	
-	<h1>03 include</h1>
+	<br>
+	
+	<jsp:getProperty property="name" name="member"/>
+	(<jsp:getProperty property="id" name="member"/>) 회원님 안녕하세요.
 </div>
 </body>
 </html>

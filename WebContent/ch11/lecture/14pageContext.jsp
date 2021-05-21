@@ -13,11 +13,17 @@
 </head>
 <body>
 <div class="container">
-	<h1>03 include</h1>
-
-	<jsp:include page="04include-action-tag.jsp"></jsp:include>
+	pageContext: ${pageContext }
+	<br>
+	request : ${pageContext.request }
+	<br>
+	session : ${pageContext.session }
+	<br>
+	application : ${pageContext.servletContext }
+	<br>
+	contextPath : ${pageContext.request.contextPath }
 	
-	<h1>03 include</h1>
+	
 </div>
 </body>
 </html>
