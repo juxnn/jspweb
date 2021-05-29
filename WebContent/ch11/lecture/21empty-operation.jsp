@@ -27,7 +27,7 @@ pageContext.setAttribute("pageAttr4", new HashMap());
 	\${empty pageAttr1 } 빈 스트링: ${empty pageAttr1 } <br>
 	\${empty pageAttr2 } 길이가 0인 배열(x): ${empty pageAttr2 } <br>
 	\${empty pageAttr3 } 길이가 0인 리스트: ${empty pageAttr3 } <br>
-	\${empty pageAttr4 } 길이가 0인 리스트: ${empty pageAttr4 } <br>
+	\${empty pageAttr4 } 길이가 0인 맵: ${empty pageAttr4 } <br>
 	
 	<hr>
 	<%-- false가 나왔다면 확인을 해보려고 짠 소스

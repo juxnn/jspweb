@@ -1,18 +1,42 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ page import="java.util.*" %>
+<%@ page import="study.*" %>
 
 <% request.setCharacterEncoding("utf-8"); %>
 
 <%
+
 	String id = request.getParameter("id");
 	String password = request.getParameter("password");
 	
-	Map<String, String> MEM = new HashMap<String, String>();
-	MEM = (HashMap) session.getAttribute("MEMBER");
-	String check = MEM.get(id);
+	MemberInfo Member = new MemberInfo();
+	/* Map<String, String> MEM = new HashMap<String, String>(); */
 
-	if(password.equals(check)){
-			
+	Member = (MemberInfo) session.getAttribute("Member");
+	String check = Member.getPassword();
+	/* 로그인 실패 */
+	if( !(password ==null) && !(password.equals(check)) ){
+%>
+<script>`
+	alert("로그인에 실패하였습니다.");
+	history.go(-1);
+</script>
+<%
+	}else if(  !(password == null) && password.equals(check) ) { //로그인 성공
+%>
+<script>
+	alert("로그인에 성공하였습니다.");
+</script>
+<%
+
+	}else{
+%>
+<script>
+	alert("로그인 해주세요.");
+</script>
+		<%		
+	}
+	
 %>
 
 
@@ -43,15 +67,4 @@
 </body>
 </html>
 
-<%
-	}else{ //로그인 실패시
-%>
-<script>
-	alert("로그인에 실패하였습니다.");
-	history.go(-1);
-</script>
-<%
-	}	
 
-	
-%>
