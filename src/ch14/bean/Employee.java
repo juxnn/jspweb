@@ -2,14 +2,15 @@ package ch14.bean;
 
 public class Employee {
 	
-	private String id;
+	private int id;
 	private String lastName;
 	private String firstName;
+	private String notes;
 	
-	public String getId() {
+	public int getId() {
 		return id;
 	}
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	public String getLastName() {
@@ -25,5 +26,12 @@ public class Employee {
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
+	public String getNotes() {
+		return notes;
+	}
+	public void setNotes(String notes) {
+		this.notes = notes;
+	}
+	
 
 }

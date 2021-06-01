@@ -38,6 +38,7 @@ public class LoginAppListener implements ServletContextListener {
     	Map<String, MemberInfo> memberList = new HashMap<String, MemberInfo>();
     	application.setAttribute("members", memberList);
     	
+    	
     }
 	
 }

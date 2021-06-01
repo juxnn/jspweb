@@ -19,33 +19,8 @@
 <body>
 <w2:loginNavbar />
 <div class="container">
-	<div class="row justify-content-center">
-		<div class="dol-8">
-			<h1>메인페이지입니다.</h1>
-			<p>회원목록 리스트</p>
-			
- 			<table class="table">
-				<thead>
-					<tr>
-						<th>#</th>
-						<th>아이디</th>
-						<th>이름</th>
-					</tr>	
-				</thead>
-				<tbody>
-					<c:forEach items="${members }" var="member" varStatus="status">
-						<tr>
-							<td>${status.count }</td>
-							<td>
-									${member.value.id }
-							</td>
-							<td>${member.value.name }</td>
-						</tr>
-					</c:forEach>
-				</tbody>
-			</table> 
-		</div>
-	</div>
+	<h1>회원정보 변경 페이지</h1>
+	
 </div>
 </body>
 </html>

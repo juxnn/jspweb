@@ -53,7 +53,7 @@
 				</div>
 				<input type="text" value="${param.index }" hidden name="index" />
 				<button type="button" id="button1" class="btn btn-secondary">수정</button>
-				<input hidden type="submit" id="submit1" class="btn btn-primary" value="전송" />
+				<input type="submit" id="submit1" class="btn btn-primary" value="전송" />
 			</form>
 		</div>
 	</div>

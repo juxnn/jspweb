@@ -1,28 +1,27 @@
-package study.week2;
+package ch14;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.Map;
 
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import ch14.bean.Employee;
+import ch14.dao.EmployeeDAO;
+
 /**
- * Servlet implementation class LoginMainPage
+ * Servlet implementation class JDBC19DeleteServlet
  */
-@WebServlet("/week2/mainpage")
-public class LoginMainPage extends HttpServlet {
+@WebServlet("/JDBC19DeleteServlet")
+public class JDBC19DeleteServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public LoginMainPage() {
+    public JDBC19DeleteServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -31,24 +30,16 @@ public class LoginMainPage extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+		String id = request.getParameter("id");
 		
+		EmployeeDAO dao = new EmployeeDAO();
 		
-		boolean loginCheck = (boolean) request.getSession().getAttribute("loginCheck");
-		if(loginCheck) {
-			System.out.println("로그인 상태");
-		}else {
-			System.out.println("로그아웃 상태");
-		}
+		Employee employee = dao.getEmployee(Integer.parseInt(id));
+		request.setAttribute("employee", employee);
 		
-		ServletContext application = request.getServletContext();
-		Map<String, MemberInfo> memberList = (Map<String, MemberInfo>) application.getAttribute("members");
-		
-		request.setAttribute("members", memberList);
-		
-		String path = "/WEB-INF/study/week2/loginMainPage.jsp";
-		RequestDispatcher dispatcher = request.getRequestDispatcher(path);
-		dispatcher.forward(request, response);
-		
+		String path = "ch14/jdbc19.jsp";
+		request.getRequestDispatcher(path).forward(request, response);
 	}
 
 	/**
@@ -56,6 +47,9 @@ public class LoginMainPage extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		String id = request.getParameter("id");
+		EmployeeDAO dao = new EmployeeDAO();
+		dao.deleteEmployee(Integer.parseInt(id));
 		doGet(request, response);
 	}
 

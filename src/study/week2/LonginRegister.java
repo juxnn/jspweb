@@ -33,7 +33,13 @@ public class LonginRegister extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//String path = "/WEB-INF/sample1/boardForm.jsp";
+		
+    	request.getSession().setAttribute("loginCheck", false);
+    	//왜 listner에서 선언하면 오류가 날까? import 때문일까? 시도해보자.
+		//그래도 안되네. 걍 여기서 선언하자.
+    	//여기서 시작하지 않을경우 오류가 날 수 있겠다.
+    	
+		
 		String path = "/WEB-INF/study/week2/loginRegisterForm.jsp";
 		RequestDispatcher dispatcher = request.getRequestDispatcher(path);
 		dispatcher.forward(request, response);

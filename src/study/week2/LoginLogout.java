@@ -1,11 +1,8 @@
 package study.week2;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.Map;
 
 import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -13,16 +10,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class LoginMainPage
+ * Servlet implementation class LoginLogout
  */
-@WebServlet("/week2/mainpage")
-public class LoginMainPage extends HttpServlet {
+@WebServlet("/week2/logout")
+public class LoginLogout extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public LoginMainPage() {
+    public LoginLogout() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -31,24 +28,12 @@ public class LoginMainPage extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.getSession().setAttribute("loginCheck", false);
+		System.out.println("로그아웃 되었습니다.");
 		
-		
-		boolean loginCheck = (boolean) request.getSession().getAttribute("loginCheck");
-		if(loginCheck) {
-			System.out.println("로그인 상태");
-		}else {
-			System.out.println("로그아웃 상태");
-		}
-		
-		ServletContext application = request.getServletContext();
-		Map<String, MemberInfo> memberList = (Map<String, MemberInfo>) application.getAttribute("members");
-		
-		request.setAttribute("members", memberList);
-		
-		String path = "/WEB-INF/study/week2/loginMainPage.jsp";
+		String path = "/WEB-INF/study/week2/loginLogout.jsp";
 		RequestDispatcher dispatcher = request.getRequestDispatcher(path);
 		dispatcher.forward(request, response);
-		
 	}
 
 	/**

@@ -22,6 +22,12 @@
       <li class="nav-item">
         <a class="nav-link" href="${pageContext.request.contextPath }/week2/login">로그인</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="${pageContext.request.contextPath }/week2/logout">로그아웃</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="${pageContext.request.contextPath }/week2/edit">회원정보변경</a>
+      </li>
   
  
     </ul>
